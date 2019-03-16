@@ -1,0 +1,13 @@
+﻿  gasStation.cpp
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(49): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(53): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(57): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(115): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(125): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(136): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(106): warning C4101: 'cashback': unreferenced local variable
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(193): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+d:\university (materials)\4семестр\лабы\сповм\lab1\child\gasstation.cpp(186): warning C4101: 'a': unreferenced local variable
+  main.cpp
+  Generating Code...
+  child.vcxproj -> D:\University (materials)\4СЕМЕСТР\ЛАБЫ\СПОВМ\lab1\Debug\child.exe
