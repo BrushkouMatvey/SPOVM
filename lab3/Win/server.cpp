@@ -23,8 +23,8 @@ void workWithProcess()
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
-
-	if (!CreateProcess(NULL, controllerCMD, NULL, NULL, FALSE, NULL, NULL, NULL, &si, &pi))
+	HANDLE closeController = CreateSemaphore(NULL, 0, 1, "closeController");
+	if (!CreateProcess(NULL, controllerCMD, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
 	{
 		PrintLastError();
 	}
@@ -46,9 +46,14 @@ void workWithProcess()
 			cout << message[i];
 			Sleep(100);
 		}
+		if(WaitForSingleObject(closeController,0) == WAIT_OBJECT_0)
+		{
+			break;
+		}
+		
 	}
 	
-	
+	CloseHandle(closeController);
 	CloseHandle(print);
 	CloseHandle(write);
 	UnmapViewOfFile(buffer);

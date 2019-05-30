@@ -9,6 +9,7 @@ using namespace std;
 
 vector<HANDLE> closeSem;
 vector<PROCESS_INFORMATION> procInfo;
+HANDLE closeController = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, "closeController");
 
 void showMenu();
 PROCESS_INFORMATION createOneProcess();
@@ -42,6 +43,8 @@ int main(int argc, char *argv[])
 				{
 					removeOneProcess();
 				}
+				ReleaseSemaphore(closeController, 1, NULL);
+				CloseHandle(closeController);
 			}
 		}
 	}
@@ -69,7 +72,7 @@ PROCESS_INFORMATION createOneProcess()
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 	
-	if (!CreateProcess(NULL, clientCMD, NULL, NULL, FALSE, NULL, NULL, NULL, &si, &pi)) 
+	if (!CreateProcess(NULL, clientCMD, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi)) 
 	{
 		cout << "ERROR." << endl;
 	}

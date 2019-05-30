@@ -9,13 +9,13 @@ using namespace std;
 int main(int argc, char*argv[])
 {
 	char semID[20];
-	sprintf_s(semID, argv[1]);
+	sprintf(semID, argv[1]);
 	HANDLE closeProcess = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, semID);
 	HANDLE write = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, "write");
 	HANDLE print = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, "print");
 		
 	char message[20];
-	sprintf_s(message, "Client %d", atoi(argv[1]));
+	sprintf(message, "Client %d", atoi(argv[1]));
 	char emptyRow[40];
 	memset(emptyRow, '\0', 20);
 	//const char *waitMsg = "Waiting...";
